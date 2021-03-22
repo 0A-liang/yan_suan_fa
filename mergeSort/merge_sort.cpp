@@ -4,14 +4,14 @@
 using namespace std;
 void merge(vector<int>& A, size_t p, size_t q, size_t r)
 {
-	size_t n1, n2, i, j, k;
+	size_t n1, n2 , i, j, k;
 	n1 = q - p + 1;
 	n2 = r - q;
 	vector<int> L(n1 + 1);
 	vector<int> R(n2 + 1);
-	for (int i = 0; i < n1; i++)
+	for (i = 0; i < n1; i++)
 		L[i] = A[p + i];
-	for (int j = 0; j < n2; j++)
+	for (j = 0; j < n2; j++)
 		R[j] = A[q + j + 1];
 	L[n1] = INT_MAX;
 	R[n2] = INT_MAX;
