@@ -4,30 +4,30 @@
 using namespace std;
 void merge(vector<int>& A, size_t p, size_t q, size_t r)
 {
-	size_t n1, n2 , i, j, k;
+	size_t n1, n2;
 	n1 = q - p + 1;
 	n2 = r - q;
 	vector<int> L(n1 + 1);
 	vector<int> R(n2 + 1);
-	for (i = 0; i < n1; i++)
+	for (int i = 0; i < n1; i++)
 		L[i] = A[p + i];
-	for (j = 0; j < n2; j++)
+	for (int j = 0; j < n2; j++)
 		R[j] = A[q + j + 1];
 	L[n1] = INT_MAX;
 	R[n2] = INT_MAX;
-	i = 0;
-	j = 0;
-	for (k = p; k <= r; k++)
+	int resetLeft = 0;
+	int resetRight = 0;
+	for (int k = p; k <= r; k++)
 	{
-		if (L[i] <= R[j])
+		if (L[resetLeft] <= R[resetRight])
 		{
-			A[k] = L[i];
-			i++;
+			A[k] = L[resetLeft];
+			resetLeft++;
 		}
 		else
 		{
-			A[k] = R[j];
-			j++;
+			A[k] = R[resetRight];
+			resetRight++;
 		}
 	}
 }
