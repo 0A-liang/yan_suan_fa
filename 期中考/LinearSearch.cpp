@@ -4,10 +4,9 @@ using namespace std;
 int LinearSearch(vector<int>& A, int v)
 {
 	int count=0;
-	vector<int>::iterator it;
-	for (it = A.begin(); it != A.end(); it++)
+	for (int i=0;i<A.size();i++)
 	{
-		if (*it == v)
+		if (A[i] == v)
 		{
 			return count;
 		}
