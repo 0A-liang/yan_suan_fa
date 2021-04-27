@@ -1,25 +1,20 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-using iter = vector<int>::iterator;
-void swap(int *a, int *b)
-{
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
 void bubbleSort(vector<int>& A)
 {
-	for (iter it = A.end()-1; it != A.begin(); it--)
+	for (int i=A.size()-1;i>0;i--)
 	{
-		for (iter it2 = A.begin(); it2 != it; it2++)
+		for (int j=0;j<i;j++)
 		{
-			if (*it2 > *(it2 + 1))
+			if (A[j] > A[j+1])
 			{
-				swap(*(it2 + 1), *it2);
-				for (iter it3 = A.begin(); it3 != A.end(); it3++)
+				int temp = A[j];
+            	A[j] = A[j+1];
+            	A[j+1] = temp;
+				for (int k=0;k<A.size();k++)
 				{
-					cout << *it3 << " ";
+					cout << A[k] << " ";
 				}
 				cout << endl;
 			}
