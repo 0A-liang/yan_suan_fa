@@ -14,8 +14,8 @@ void selectionSort(vector<int>& A)
 			}
 		}
 		int temp = A[min];
-	    A[min] = A[i];
-	    A[i] = temp;
+	    	A[min] = A[i];
+	    	A[i] = temp;
 		for (int k=0;k<A.size();k++)
 		{
 			cout << A[k] << " ";
