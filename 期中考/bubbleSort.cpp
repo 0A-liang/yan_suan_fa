@@ -10,8 +10,8 @@ void bubbleSort(vector<int>& A)
 			if (A[j] > A[j+1])
 			{
 				int temp = A[j];
-            	A[j] = A[j+1];
-            	A[j+1] = temp;
+            			A[j] = A[j+1];
+            			A[j+1] = temp;
 				for (int k=0;k<A.size();k++)
 				{
 					cout << A[k] << " ";
