@@ -1,29 +1,27 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-using iter = vector<int>::iterator;
-void BinarySearch(vector<int>& A, iter low, iter high, int v)
+void BinarySearch(vector<int>& A, int low, int high, int v)
 {
-	for (iter it = low; it != high+1; it++)
+	for (int i=low;i<high+1;i++)
 	{
-		cout << *it << " ";
+		cout << A[i] << " ";
 	}
 	cout << endl;
-	iter mid = low + (high - low) / 2;
+	int mid = low + (high - low) / 2;
 	if (low <= high)
 	{
-		
-		if (v > *mid)
+		if (v > A[mid])
 		{
 			BinarySearch(A, mid + 1, high, v);
 		}
-		else if (v < *mid)
+		else if (v < A[mid])
 		{
 			BinarySearch(A, low, mid - 1, v);
 		}
 		else
 		{
-			cout << *mid << endl;
+			cout << A[mid] << endl;
 		}
 	}
 }
@@ -33,5 +31,5 @@ int main(int argc, char *argv[])
 	int i, n, v;
 	for (cin >> i; i > 0; i--) { cin >> n; A.push_back(n); }
 	cin >> v;
-	BinarySearch(A, A.begin(), A.end()-1,v);
+	BinarySearch(A, 0, A.size()-1,v);
 }
