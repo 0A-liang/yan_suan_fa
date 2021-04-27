@@ -1,29 +1,24 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-using iter = vector<int>::iterator;
-void swap(int *a,int *b)
-{
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
 void selectionSort(vector<int>& A)
 {
-	for (iter it = A.begin(); it != A.end()-1; it++)
+	for (int i=0;i<A.size()-1;i++)
 	{
-		iter min = it;
-		for (iter it2 = it + 1; it2 != A.end(); it2++)
+		int min = i;
+		for (int j=i+1;j<A.size();j++)
 		{
-			if (*it2 < *min)
+			if (A[j] < A[min])
 			{
-				min = it2;
+				min = j;
 			}
 		}
-		swap(*min,*it);
-		for (iter itr = A.begin(); itr != A.end(); itr++)
+		int temp = A[min];
+	    A[min] = A[i];
+	    A[i] = temp;
+		for (int k=0;k<A.size();k++)
 		{
-			cout << *itr << " ";
+			cout << A[k] << " ";
 		}
 		cout << endl;
 	}
